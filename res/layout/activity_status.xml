@@ -3,38 +3,41 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/backgroud"
     tools:context=".StatusActivity" >
 
-    <!-- Title TextView-->
-
+  <!-- Title TextView-->
   <TextView android:layout_width="fill_parent"
     android:layout_height="wrap_content" 
     android:gravity="center"
     android:textSize="30sp"
     android:layout_margin="10dp" 
+    android:textColor="@android:color/white"
     android:text="@string/titleStatus"/>
+  
+  <!-- Text Counter TextView -->
+  <TextView android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:id="@+id/textCount" 
+      android:layout_marginRight="10dp"/>"
 
   <!-- Status EditText  -->
-
   <EditText android:layout_width="fill_parent"
 	android:layout_height="0dp"
     android:layout_weight="1"
     android:hint="@string/hintText" 
     android:id="@+id/editText"
-    android:gravity="top|left"></EditText>
-
- 
+    android:gravity="top|left" 
+    android:background="#9fff"/>
 
   <!-- Update Button -->
-
   <Button android:layout_width="fill_parent"
-
-    android:layout_height="wrap_content" android:text="@string/buttonUpdate"
-
-    android:textSize="20sp" android:id="@+id/buttonUpdate"></Button>
+    android:layout_height="wrap_content" 
+    android:text="@string/buttonUpdate"
+    android:textSize="20sp" 
+    android:id="@+id/buttonUpdate"/>
     
-   	
-
 </LinearLayout>
 
 
