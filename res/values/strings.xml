@@ -7,5 +7,13 @@
     <string name="titleStatus">New tweet</string>
 	<string name="hintText">Please enter your 140-character status</string>
     <string name="buttonUpdate">Update</string>
+    <string name="titleUsername">username</string>
+    <string name="summaryUsername">Your username to login twitter</string>
+    <string name="titlePassword">password</string>
+    <string name="summaryPassword">Your password to login in twitter</string>
+    <string name="titleApiRoot">apiRoot</string>
+    <string name="summaryApiRoot">The twitter api root url</string>
+    <string name="titlePrefs">Preferences</string>
+    <string name="itemPrefs">Preferences</string>
     
 </resources>

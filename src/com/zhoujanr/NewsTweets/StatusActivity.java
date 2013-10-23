@@ -5,11 +5,13 @@ import winterwell.jtwitter.TwitterException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -116,6 +118,18 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 	    editText.setText("");
 	    Log.d(TAG, "onClicked");
 	      
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch (item.getItemId()){
+		case R.id.action_settings:
+			startActivity(new Intent(this, PrefsActivity.class));
+			break;
+		}
+		
+		return true;
 	}
 
 }
