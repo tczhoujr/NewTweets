@@ -29,7 +29,11 @@
     android:hint="@string/hintText" 
     android:id="@+id/editText"
     android:gravity="top|left" 
-    android:background="#9fff"/>
+    android:background="#cfff"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"/>
 
   <!-- Update Button -->
   <Button android:layout_width="fill_parent"
