@@ -158,6 +158,8 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 	public void onSharedPreferenceChanged(SharedPreferences arg0, String arg1) {
 		// TODO Auto-generated method stub
 		
+		// out date twitter object
+		twitter = null;
 	}
 
 }
