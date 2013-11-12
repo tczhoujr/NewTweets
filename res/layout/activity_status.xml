@@ -29,7 +29,7 @@
     android:hint="@string/hintText" 
     android:id="@+id/editText"
     android:gravity="top|left" 
-    android:background="#cfff"
+    android:background="#6fff"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingTop="10dp"

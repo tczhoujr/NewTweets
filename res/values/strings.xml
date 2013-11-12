@@ -15,5 +15,7 @@
     <string name="summaryApiRoot">The twitter api root url</string>
     <string name="titlePrefs">Preferences</string>
     <string name="itemPrefs">Preferences</string>
+    <string name="itemServiceStart">Start</string>
+    <string name="itemServiceStop">Stop</string>
     
 </resources>

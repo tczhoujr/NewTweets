@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/itemPrefs" android:title="@string/itemPrefs"></item>
-    
+    <item android:id="@+id/itemServiceStart" android:title="@string/itemServiceStart"></item>
+    <item android:id="@+id/itemServiceStop" android:title="@string/itemServiceStop"></item>
 
 </menu>
