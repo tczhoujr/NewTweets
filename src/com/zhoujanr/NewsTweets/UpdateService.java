@@ -1,5 +1,6 @@
 package com.zhoujanr.NewsTweets;
 
+
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -11,6 +12,7 @@ public class UpdateService extends Service {
 	private static final int DELAY = 600000; //10 mins
 	private boolean runFlag = false;
 	private Updater updater;
+	private YamaApplication yamba;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -23,6 +25,8 @@ public class UpdateService extends Service {
 		// TODO Auto-generated method stub
 		super.onCreate();
 		this.updater = new Updater();
+		this.yamba = (YamaApplication)getApplication();
+		
 		Log.d(TAG, "onCreate");
 	}
 
@@ -33,6 +37,7 @@ public class UpdateService extends Service {
 		
 		this.runFlag=true;
 		this.updater.start();
+		this.yamba.setServiceRunning(true);
 		
 		Log.d(TAG, "onStart");
 		return START_STICKY;
@@ -46,6 +51,7 @@ public class UpdateService extends Service {
 		this.runFlag = false;
 		this.updater.interrupt();
 		this.updater = null;
+		this.yamba.setServiceRunning(false);
 		
 		Log.d(TAG, "onDestroy");
 	}
@@ -68,7 +74,11 @@ public class UpdateService extends Service {
 				Log.d(TAG, "Updater running");
 				try{
 					//some work goes here...
-					Log.d(TAG, "Updater ran");
+					YamaApplication yamba = (YamaApplication) updateService.getApplication();
+					int newUpdate = yamba.fetchStatusUpdates();
+					if(newUpdate > 0)
+						Log.d(TAG, "We have a new status");
+					
 					Thread.sleep(DELAY);
 				}catch(InterruptedException e){
 					updateService.runFlag = false;
