@@ -17,6 +17,7 @@
     <string name="itemPrefs">Preferences</string>
     <string name="itemServiceStart">Start</string>
     <string name="itemServiceStop">Stop</string>
+    <string name="itemNewTweet">New Tweet</string>
     <string name="titleTimeline">Timeline</string>
     
 </resources>

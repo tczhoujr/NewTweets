@@ -9,7 +9,7 @@ import android.util.Log;
 public class UpdateService extends Service {
 
 	private static final String TAG = "UpdateService";
-	private static final int DELAY = 600000; //10 mins
+	private static final int DELAY = 6000; //10 mins
 	private boolean runFlag = false;
 	private Updater updater;
 	private YamaApplication yamba;
