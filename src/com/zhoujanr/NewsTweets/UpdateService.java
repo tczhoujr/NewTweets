@@ -13,10 +13,6 @@ public class UpdateService extends Service {
 	private boolean runFlag = false;
 	private Updater updater;
 	private YamaApplication yamba;
-	private static final String NEW_STATUS_INTENT
-						= "com.zhoujanr.NewsTweets.NEW_STATUS";
-	private static final String NEW_STATUS_EXTRA_COUNT 
-						= "new_status_extra_count";
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -65,12 +61,6 @@ public class UpdateService extends Service {
 	 */
 	private class Updater extends Thread{
 		
-		static final String RECEIVE_TIMELINE_NOTIFICATIONS =
-		        "com.zhoujanr.NewsTweets.RECEIVE_TIMELINE_NOTIFICATIONS"; 
-
-		
-		Intent intent;
-		
 		public Updater(){
 			super("UpdaterService-Updater");
 		}
@@ -86,13 +76,8 @@ public class UpdateService extends Service {
 					//some work goes here...
 					YamaApplication yamba = (YamaApplication) updateService.getApplication();
 					int newUpdate = yamba.fetchStatusUpdates();
-					if(newUpdate > 0){
+					if(newUpdate > 0)
 						Log.d(TAG, "We have a new status");
-						intent = new Intent(NEW_STATUS_INTENT);
-						intent.putExtra(NEW_STATUS_EXTRA_COUNT, newUpdate);
-						updateService.sendBroadcast(intent, RECEIVE_TIMELINE_NOTIFICATIONS);
-						
-					}
 					
 					Thread.sleep(DELAY);
 				}catch(InterruptedException e){
