@@ -19,5 +19,8 @@
     <string name="itemServiceStop">Stop</string>
     <string name="itemNewTweet">New Tweet</string>
     <string name="titleTimeline">Timeline</string>
-    
+    <string name="send_timeline_notifications_permission_label">Timeline notifications permission</string>
+    <string name="send_timeline_notifications_permission_description">This is used for permission to notify update Timeline status</string>
+    <string name="receive_timeline_notifications_permission_label">Receive timeline notifications permission</string>
+    <string name="receive_timeline_notifications_permission_description">This is used for permission to receive notifications from Timeline status</string>
 </resources>
