@@ -14,14 +14,14 @@
 		    android:layout_gravity="left"
 		    android:id="@+id/textUser"
 		    android:gravity="left" 
-		    android:textColor="@android:color/black" />
+		    android:textColor="@android:color/darker_gray" />
 	    
 	    <TextView android:layout_width="fill_parent"
 		    android:layout_height="wrap_content" 
 		    android:layout_gravity="right"
 		    android:id="@+id/textCreatedAt"
 		    android:gravity="right"
-		    android:textColor="@android:color/black" />
+		    android:textColor="@android:color/darker_gray" />
 	</LinearLayout>  
     
     <TextView android:layout_width="fill_parent"
@@ -29,6 +29,7 @@
 	    android:id="@+id/textText"
 	    android:gravity="left"
 	    android:layout_margin="5dp" 
-	    android:textColor="@android:color/black" />
+	    android:textColor="@android:color/primary_text_dark"
+	    android:textSize="20sp" />
 
 </LinearLayout>

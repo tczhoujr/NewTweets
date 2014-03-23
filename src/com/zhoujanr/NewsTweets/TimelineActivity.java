@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 public class TimelineActivity extends Activity{
 	
@@ -24,9 +25,12 @@ public class TimelineActivity extends Activity{
 	private SQLiteDatabase db;
 	private Cursor cursor;
 	private ListView listTimeline;
-	private SimpleCursorAdapter adapter;
+	//private SimpleCursorAdapter adapter;
+	private TimelineAdapter adapter;
 	private TimelineReceiver receiver;
 	private IntentFilter filter;
+	private YamaApplication yama;
+	
 	
 	static final String[] FROM = { DbHelper.C_CREATED_AT, DbHelper.C_USER, DbHelper.C_TEXT };
 	static final int[] TO = { R.id.textCreatedAt, R.id.textUser, R.id.textText }; 
@@ -47,6 +51,14 @@ public class TimelineActivity extends Activity{
 		//register receiver
 		receiver = new TimelineReceiver();
 		filter = new IntentFilter(NEW_STATUS_INTENT);
+		
+		//check whether the preference has been set
+		yama = (YamaApplication) this.getApplication(); 
+		if(yama.getPrefs().getString("username", null)==null){
+			startActivity(new Intent(this, PrefsActivity.class));
+			Toast.makeText(this, R.string.msgSetupPrefs, Toast.LENGTH_LONG).show();
+		}
+		
 	}
 
 	@Override
@@ -67,7 +79,7 @@ public class TimelineActivity extends Activity{
 		startManagingCursor(cursor);
 		
 		// Setup the adapter
-	    adapter = new SimpleCursorAdapter(this, R.layout.row, cursor, FROM, TO);  // http://dev.icybear.net/learning-android-cn/images/7.png
+	    adapter = new TimelineAdapter(this, cursor);  // http://dev.icybear.net/learning-android-cn/images/7.png
 	    listTimeline.setAdapter(adapter); 
 
 		//Register the receiver

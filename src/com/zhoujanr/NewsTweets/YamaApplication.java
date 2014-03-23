@@ -1,6 +1,7 @@
 package com.zhoujanr.NewsTweets;
 
 import java.util.List;
+
 import winterwell.jtwitter.Twitter;
 import winterwell.jtwitter.Twitter.Status;
 import android.app.Application;
@@ -70,7 +71,13 @@ public class YamaApplication extends Application implements OnSharedPreferenceCh
 	}
 	
 	public StatusData getStatusData(){
+		
 		return statusData;
+	}
+	
+	public SharedPreferences getPrefs(){
+		
+		return prefs;
 	}
 	
 	
